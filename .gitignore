@@ -24,6 +24,8 @@ bin/
 
 ### VS Code ###
 .vscode/
+.idea
+Practice- Java.iml
 
 ### Mac OS ###
 .DS_Store

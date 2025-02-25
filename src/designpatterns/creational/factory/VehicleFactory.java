@@ -1,4 +1,4 @@
-package designpatterns.factory;
+package designpatterns.creational.factory;
 
 public class VehicleFactory {
 
@@ -15,4 +15,13 @@ public class VehicleFactory {
 
         return null;
     }
+
+    // Another Method Of Factory Design pattern
+    public Vehicle getVehicles(VehicleType typeOfVehicle) {
+        return switch (typeOfVehicle) {
+            case CAR -> new Car();
+            case BIKE -> new Bike();
+        };
+    }
+
 }

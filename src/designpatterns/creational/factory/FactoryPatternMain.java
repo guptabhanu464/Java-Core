@@ -1,4 +1,4 @@
-package designpatterns.factory;
+package designpatterns.creational.factory;
 
 public class FactoryPatternMain {
 
@@ -11,5 +11,11 @@ public class FactoryPatternMain {
         Vehicle bike = factory.getVehicle("Bike");
         bike.accelerate();
 
+        VehicleFactory factory1 = new VehicleFactory();
+
+        Vehicle car1 = factory1.getVehicles(VehicleType.CAR);
+        Vehicle bike1 = factory1.getVehicles(VehicleType.BIKE);
+        car1.deAccelerate();
+        bike1.deAccelerate();
     }
 }

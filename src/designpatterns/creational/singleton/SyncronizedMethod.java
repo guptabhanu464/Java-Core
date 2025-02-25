@@ -1,4 +1,4 @@
-package singleton;
+package designpatterns.creational.singleton;
 
 public class SyncronizedMethod {
 

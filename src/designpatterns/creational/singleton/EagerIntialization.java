@@ -1,8 +1,8 @@
-package singleton;
+package designpatterns.creational.singleton;
 
 public class EagerIntialization {
 
-    // Here we have created a singleton class
+    // Here we have created a designpatterns.creational.singleton class
     // In this when the application is started , this class will be instiated and will get saved in the memory
     private static final EagerIntialization object = new EagerIntialization();
 
@@ -13,6 +13,7 @@ public class EagerIntialization {
 
     }
 
+    // This will create object At application startup Only
 
     // If anyone want this object , they can get through this method
     public static EagerIntialization getInstance() {

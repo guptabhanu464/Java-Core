@@ -1,4 +1,4 @@
-package designpatterns.builder;
+package designpatterns.creational.builder;
 
 
 public class Car {
@@ -73,10 +73,10 @@ public class Car {
         private boolean audioSystem;
         private boolean alloyWheels;
 
-        public CarBuilder(String name) {
-            this.engineName = name;
-            //this.airBags = bags;
-        }
+//        public CarBuilder(String name) {
+//            this.engineName = name;
+//            //this.airBags = bags;
+//        }
 
 
         public CarBuilder setEngineName(String engineName) {

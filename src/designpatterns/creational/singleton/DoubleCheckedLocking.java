@@ -1,8 +1,8 @@
-package singleton;
+package designpatterns.creational.singleton;
 
 public class DoubleCheckedLocking {
 
-    private static volatile DoubleCheckedLocking object;
+    private static DoubleCheckedLocking object;
 
     private DoubleCheckedLocking() {
 
@@ -13,9 +13,9 @@ public class DoubleCheckedLocking {
     // After that the syncronized keyword is also used
     // Syncronized - It is used to control access to shared resources by multiple threads
     public static DoubleCheckedLocking getInstance() {
-        if(object == null) {
+        if(object == null) { // One time check
             synchronized (DoubleCheckedLocking.class) {
-                if(object == null) {
+                if(object == null) { // 2nd Time checking
                     object = new DoubleCheckedLocking();
                 }
             }

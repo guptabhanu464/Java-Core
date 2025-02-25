@@ -1,12 +1,6 @@
-package designpatterns.factory;
+package designpatterns.creational.factory;
 
-public final class  Bike implements Vehicle{
-
-    Bike() {
-
-    }
-
-
+class Bike implements Vehicle{
 
 
     @Override

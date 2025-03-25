@@ -1,10 +1,8 @@
 package stream;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamPractice {
 
@@ -62,11 +60,35 @@ public class StreamPractice {
        // System.out.println(integers4.stream().filter(x-> x % 2 ==0).map(n -> n*n).reduce(Integer::sum).orElseThrow());
 
      //
+        int[] ints = {1,1,1,1,1};
+        int sum = 0;
+        for(int x = 0 ; x < ints.length ; x++) {
+            if(x % 2 != 0) {
+                sum += ints[x];
+            }
 
+        }
 
+        // System.out.println(sum);
+        // Now Using Streams
+//        int result = IntStream.of(0,ints.length)
+//                .filter(j -> j % 2 != 0)
+//                .map(j -> ints[j])
+//                .sum();
 
+        //System.out.println(result);
 
+        String string = "Java is Programming Language and Java is Popular";
+        // Need to find first non repatative word
+        String[] strings1 = string.split(" ");
+//        for(String s1 : strings1) {
+//           // System.out.println(s1);
+//        }
 
+        Set<String> set = new HashSet<>();
+        set.addAll(Arrays.asList(strings1));
+
+        System.out.println(set);
 
     }
 }

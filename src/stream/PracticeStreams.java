@@ -1,9 +1,7 @@
 package stream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ListResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class PracticeStreams {
@@ -22,13 +20,13 @@ public class PracticeStreams {
         for(int i : list) {
             result.add(i * i);
         }
-        System.out.println(result);
+       // System.out.println(result);
 
         // Now we will be using streams
         // Below we can see we have to write one single line of code
         // Square of each number
         List<Integer> result1 = list.stream().map(n -> n * n).toList();
-        System.out.println(result1);
+        //System.out.println(result1);
 
 
         // Let try odd number
@@ -64,6 +62,38 @@ public class PracticeStreams {
 //
 //        List<Integer> streams3 =   Stream.iterate(1 , x-> x + 1).limit(100).toList();
 //        System.out.println(streams3);
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> list1 = numbers.stream().filter(n -> n % 2 == 0).toList();
+       // list1.forEach(System.out::println);
+
+        // Sum of numbers using reduce method
+        Integer reduce = numbers.stream().reduce(0, Integer::sum);
+      //  System.out.println(reduce);
+
+        List<Integer> numbersmAX = Arrays.asList(10, 20, 30, 40);
+        Integer integer = numbersmAX.stream().max(Integer::compare).orElse(0);
+       // System.out.println(integer);
+
+        List<String> names = Arrays.asList("alice", "bob");
+        List<String> list2 = names.stream().map(String::toUpperCase).toList();
+      //  list2.forEach(System.out::println);
+
+        List<String> names1 = Arrays.asList("Alice", "Bob", "Charlie");
+        Map<Integer, List<String>> collect = names1.stream().collect(Collectors.groupingBy(String::length));
+      //  System.out.println(collect);
+
+        List<String> words = Arrays.asList("apple", "banana", "apple");
+        Map<String, Long> collect1 = words.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+     //   System.out.println(collect1);
+
+        List<String> words1 = Arrays.asList("Java", "is", "awesome");
+        String collect2 = words1.stream().collect(Collectors.joining(" "));
+    //    System.out.println(collect2);
+
+
+
+
     }
 
 

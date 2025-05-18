@@ -85,15 +85,32 @@ public class PracticeStreams {
 
         List<String> words = Arrays.asList("apple", "banana", "apple");
         Map<String, Long> collect1 = words.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
-     //   System.out.println(collect1);
+       //System.out.println(collect1);
 
         List<String> words1 = Arrays.asList("Java", "is", "awesome");
         String collect2 = words1.stream().collect(Collectors.joining(" "));
     //    System.out.println(collect2);
 
+        String s = "Bhanu Gupta".replace(" ","");
+        //Map<Character,Integer> map = new LinkedHashMap<>();
+        Map<Character, Long> collect3 = s.replace(" ","").chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, LinkedHashMap::new,Collectors.counting()));
+       // System.out.println(collect3);
 
+        //String s = "programming";
+        //char[] charArray = s.toCharArray();
+        //Map<Character, Long> collect10 = s.chars().mapToObj(x -> (char) x).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+        String str = "swiss";
 
-
+        Map<Character,Integer> map1 = new LinkedHashMap<>();
+        for(char ch : str.toCharArray()) {
+            map1.put(ch , map1.getOrDefault(ch , 0) + 1);
+        }
+        for(Map.Entry<Character,Integer> entry : map1.entrySet()) {
+            if(entry.getValue() == 1) {
+                System.out.println(entry.getKey());
+                break;
+            }
+        }
     }
 
 
